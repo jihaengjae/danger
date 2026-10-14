@@ -143,7 +143,7 @@ tbody tr:hover{background:#F6F8FA}
 .urgent-top{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .urgent-badge{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-size:13px;font-weight:900;padding:7px 16px;border-radius:20px;letter-spacing:.3px;animation:urgentPulse 1.6s infinite;box-shadow:0 0 0 0 rgba(204,51,51,.6)}
 .urgent-count{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:20px}
-.urgent-title{font-family:'Noto Serif KR',serif;color:#fff;font-size:clamp(19px,4.4vw,27px);font-weight:700;line-height:1.45;margin-bottom:4px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
+.urgent-title{word-break:keep-all;font-family:'Noto Serif KR',serif;color:#fff;font-size:clamp(19px,4.4vw,27px);font-weight:700;line-height:1.45;margin-bottom:4px;text-shadow:0 2px 10px rgba(0,0,0,.15)}
 .urgent-title em{font-style:normal;color:#FFE9A8;border-bottom:2px solid rgba(255,255,255,.5)}
 .urgent-sub{color:#FFF3DC;font-size:13.5px;font-weight:600;margin-bottom:18px}
 .urgent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
@@ -166,6 +166,15 @@ tbody tr:hover{background:#F6F8FA}
 .course-card .urgent-item{text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 10px}
 .course-card .ui-label{margin-bottom:0;flex-shrink:0}
 .course-card .ui-value{text-align:right}
+/* 산대특 강조 카드 */
+.course-card.featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(240,165,0,.22),rgba(255,255,255,.10));border:2px solid #F0A500;box-shadow:0 8px 28px rgba(240,165,0,.25);position:relative;padding:20px 18px 16px}
+.course-card.featured .cc-badge{background:#F0A500;color:#102A43}
+.course-card.featured .cc-name{font-size:16px}
+.course-card.featured .urgent-grid{grid-template-columns:1fr 1fr}
+.feat-ribbon{position:absolute;top:-12px;right:16px;background:var(--red);color:#fff;font-size:11.5px;font-weight:900;padding:4px 12px;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.feat-perks{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 12px}
+.feat-perks span{background:rgba(255,233,168,.18);border:1px solid rgba(255,233,168,.55);color:#FFE9A8;font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px}
+@media(max-width:640px){.course-card.featured .urgent-grid{grid-template-columns:1fr}}
 @keyframes urgentPulse{0%,100%{box-shadow:0 0 0 0 rgba(204,51,51,.55)}50%{box-shadow:0 0 0 9px rgba(204,51,51,0)}}
 @media(max-width:640px){
   .urgent-banner{padding:18px 14px 22px}
@@ -210,13 +219,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="urgent-banner">
   <div class="urgent-inner">
     <div class="urgent-top">
-      <span class="urgent-badge">🔥 11월 개강</span>
-      <span class="urgent-count">국비지원 2개 과정 동시 모집</span>
+      <span class="urgent-badge">🔥 10월·11월 개강</span>
+      <span class="urgent-count">국비지원 3개 과정 동시 모집</span>
     </div>
-    <h2 class="urgent-title">국비지원(내일배움카드) 위험물산업기사·기능사<br><em>필기·실기 야간반 개강</em></h2>
-    <p class="urgent-sub">위험물산업기사 필기 · 위험물기능사 필기+실기 — 2개 과정 중 선택 수강</p>
+    <h2 class="urgent-title">국비지원(내일배움카드) 위험물산업기사·기능사<br><em>산대특 주간반 + 야간반 개강</em></h2>
+    <p class="urgent-sub">산대특 주간 180시간 · 산업기사 필기 야간 · 기능사 필기+실기 야간 — 3개 과정 중 선택 수강</p>
 
     <div class="course-cards">
+      <div class="course-card featured">
+        <span class="feat-ribbon">★ 추천 · 주간 집중</span>
+        <div class="cc-head">
+          <span class="cc-badge">산대특 · 주간</span>
+          <span class="cc-name">(산대특) 위험물 안전관리 실무자 양성 지원과정</span>
+        </div>
+        <div class="feat-perks"><span>산업기사+기능사 필기·실기</span><span>훈련장려금 월 20만원</span><span>자기부담금 115,380원</span></div>
+        <div class="urgent-grid">
+          <div class="urgent-item"><span class="ui-label">훈련기간</span><span class="ui-value">'26.10.21~'26.12.01</span></div>
+          <div class="urgent-item"><span class="ui-label">수업요일</span><span class="ui-value">주5일 (월~금)</span></div>
+          <div class="urgent-item"><span class="ui-label">훈련시간</span><span class="ui-value">09:00~16:00</span></div>
+          <div class="urgent-item"><span class="ui-label">총 시간</span><span class="ui-value">1일 6시간·180시간</span></div>
+        </div>
+        <div class="urgent-bar-wrap">
+          <div class="urgent-bar"><div class="urgent-bar-fill" data-w="35"></div></div>
+          <span class="urgent-bar-text">현재 <b>7명</b> 접수 · 20명 중 <b>13자리</b> 남음</span>
+        </div>
+      </div>
+
       <div class="course-card">
         <div class="cc-head">
           <span class="cc-badge">산업기사 · 야간</span>
